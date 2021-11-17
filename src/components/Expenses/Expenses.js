@@ -2,9 +2,11 @@ import ExpenseItem from "./ExpenseItem";
 import './Expenses.css';
 import Card from "../UI/Card";
 
+// props inherited from App.js
 const Expenses = (props) => {
   return (
     <Card className='expenses'>
+      {/* props from App.js sent down again into ExpenseItem */}
       <ExpenseItem
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}
@@ -27,6 +29,6 @@ const Expenses = (props) => {
       />
     </Card>
   );
-}
+};
 
 export default Expenses;

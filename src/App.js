@@ -2,6 +2,7 @@ import Expenses from './components//Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
+  // main data used as props in child components
   const expenses = [
     {
       id: 'expense1',
@@ -29,12 +30,20 @@ const App = () => {
     },
   ];
 
+  // function passed as a prop into NewExpense to retrieve
+  // data from form input to be added to expenses array above
+  const addExpenseHandler = (newExpense) => {
+    console.log('From App.js');
+    console.log(newExpense);
+  };
+
   return (
     <div className="App">
-      <NewExpense />
+      {/* pass function as custom prop into NewExpense */}
+      <NewExpense addNewExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
-}
+};
 
 export default App;
