@@ -11,8 +11,6 @@ const Expenses = (props) => {
 
   const getSelectedFilterYear = (selectedYear) => {
     setSelectedYear(selectedYear);
-    console.log('Expenses.js');
-    console.log(selectedYear);
   };
 
   const filteredExpenses = props.expenseItem.filter((expense) => {
